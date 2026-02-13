@@ -21,6 +21,17 @@
 3. Open the DMG and move `ai-dock.app` to `/Applications`.
 4. Open the app once and keep it running in the menu bar.
 
+### If macOS blocks launch
+1. Move `ai-dock.app` to `/Applications` and try opening once.
+2. Open **System Settings -> Privacy & Security** and click **Open Anyway** for `ai-dock`.
+3. If that option does not appear (or only **Move to Bin** is shown), run this fallback:
+
+```bash
+xattr -dr com.apple.quarantine /Applications/ai-dock.app
+codesign --force --deep --sign - /Applications/ai-dock.app
+open /Applications/ai-dock.app
+```
+
 ### OpenCode integration
 - If `~/.config/opencode/` exists, `ai-dock` auto-installs its plugin.
 - Verify in app: **Settings -> OpenCode Plugin**.

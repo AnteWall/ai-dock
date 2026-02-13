@@ -33,7 +33,7 @@ jobs:
             CODE_SIGNING_ALLOWED=NO \
             build
 
-      - name: Stage and ad-hoc sign app bundle
+      - name: Stage app bundle
         run: |
           APP_PATH="build/DerivedData/Build/Products/Release/ai-dock.app"
           STAGING_DIR="build/release-staging"
@@ -43,9 +43,6 @@ jobs:
           cp -R "$APP_PATH" "$STAGING_DIR/ai-dock.app"
 
           xattr -cr "$STAGING_DIR/ai-dock.app"
-
-          codesign --force --deep --sign - "$STAGING_DIR/ai-dock.app"
-          codesign --verify --deep --strict --verbose=2 "$STAGING_DIR/ai-dock.app"
 
       - name: Package app
         run: |
