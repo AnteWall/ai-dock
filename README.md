@@ -17,8 +17,8 @@
 
 ### From GitHub release
 1. Open the [latest release](releases/latest).
-2. Download the latest `ai-dock-<version>.zip` asset from that page.
-3. Unzip and move `ai-dock.app` to `/Applications`.
+2. Download the latest `ai-dock-<version>.dmg` asset from that page.
+3. Open the DMG and move `ai-dock.app` to `/Applications`.
 4. Open the app once and keep it running in the menu bar.
 
 ### OpenCode integration
