@@ -1,0 +1,7 @@
+.DS_Store
+
+# Local Xcode signing overrides
+Config/Signing.local.xcconfig
+
+# Optional local assistant data
+.claude/

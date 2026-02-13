@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		148BE1372F3DF41800554B91 /* claude-dock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "claude-dock.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		148BE1372F3DF41800554B91 /* ai-dock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ai-dock.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		14AA00012F40000100554B91 /* Config/Signing.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Config/Signing.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		148BE1392F3DF41800554B91 /* claude-dock */ = {
+		148BE1392F3DF41800554B91 /* ai-dock */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "claude-dock";
+			path = "ai-dock";
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -32,7 +33,8 @@
 		148BE12E2F3DF41800554B91 = {
 			isa = PBXGroup;
 			children = (
-				148BE1392F3DF41800554B91 /* claude-dock */,
+				148BE1392F3DF41800554B91 /* ai-dock */,
+				14AA00012F40000100554B91 /* Config/Signing.xcconfig */,
 				148BE1382F3DF41800554B91 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -40,7 +42,7 @@
 		148BE1382F3DF41800554B91 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				148BE1372F3DF41800554B91 /* claude-dock.app */,
+				148BE1372F3DF41800554B91 /* ai-dock.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -48,9 +50,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		148BE1362F3DF41800554B91 /* claude-dock */ = {
+		148BE1362F3DF41800554B91 /* ai-dock */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 148BE1422F3DF41A00554B91 /* Build configuration list for PBXNativeTarget "claude-dock" */;
+			buildConfigurationList = 148BE1422F3DF41A00554B91 /* Build configuration list for PBXNativeTarget "ai-dock" */;
 			buildPhases = (
 				148BE1332F3DF41800554B91 /* Sources */,
 				148BE1342F3DF41800554B91 /* Frameworks */,
@@ -61,13 +63,13 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				148BE1392F3DF41800554B91 /* claude-dock */,
+				148BE1392F3DF41800554B91 /* ai-dock */,
 			);
-			name = "claude-dock";
+			name = "ai-dock";
 			packageProductDependencies = (
 			);
-			productName = "claude-dock";
-			productReference = 148BE1372F3DF41800554B91 /* claude-dock.app */;
+			productName = "ai-dock";
+			productReference = 148BE1372F3DF41800554B91 /* ai-dock.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -85,7 +87,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 148BE1322F3DF41800554B91 /* Build configuration list for PBXProject "claude-dock" */;
+			buildConfigurationList = 148BE1322F3DF41800554B91 /* Build configuration list for PBXProject "ai-dock" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -99,7 +101,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				148BE1362F3DF41800554B91 /* claude-dock */,
+				148BE1362F3DF41800554B91 /* ai-dock */,
 			);
 		};
 /* End PBXProject section */
@@ -160,7 +162,6 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = 6W8QBK84PB;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -224,7 +225,6 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 6W8QBK84PB;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -247,27 +247,25 @@
 		};
 		148BE1432F3DF41A00554B91 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 14AA00012F40000100554B91 /* Config/Signing.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6W8QBK84PB;
-				ENABLE_APP_SANDBOX = YES;
+				ENABLE_APP_SANDBOX = NO;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
-				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.strawhatlabs.claude-dock";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				REGISTER_APP_GROUPS = YES;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
@@ -279,27 +277,25 @@
 		};
 		148BE1442F3DF41A00554B91 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 14AA00012F40000100554B91 /* Config/Signing.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6W8QBK84PB;
-				ENABLE_APP_SANDBOX = YES;
+				ENABLE_APP_SANDBOX = NO;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
-				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.strawhatlabs.claude-dock";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				REGISTER_APP_GROUPS = YES;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
@@ -312,7 +308,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		148BE1322F3DF41800554B91 /* Build configuration list for PBXProject "claude-dock" */ = {
+		148BE1322F3DF41800554B91 /* Build configuration list for PBXProject "ai-dock" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				148BE1402F3DF41A00554B91 /* Debug */,
@@ -321,7 +317,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		148BE1422F3DF41A00554B91 /* Build configuration list for PBXNativeTarget "claude-dock" */ = {
+		148BE1422F3DF41A00554B91 /* Build configuration list for PBXNativeTarget "ai-dock" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				148BE1432F3DF41A00554B91 /* Debug */,

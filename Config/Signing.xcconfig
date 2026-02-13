@@ -1,0 +1,6 @@
+// Shared defaults for open-source builds.
+// Create Signing.local.xcconfig next to this file for machine-specific overrides.
+#include? "Signing.local.xcconfig"
+
+PRODUCT_BUNDLE_IDENTIFIER = io.github.ai-dock
+DEVELOPMENT_TEAM = 6W8QBK84PB

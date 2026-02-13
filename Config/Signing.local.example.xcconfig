@@ -1,0 +1,5 @@
+// Copy this file to Signing.local.xcconfig for local signing.
+// This file is not committed.
+
+DEVELOPMENT_TEAM = YOURTEAMID
+PRODUCT_BUNDLE_IDENTIFIER = com.yourdomain.ai-dock
