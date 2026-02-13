@@ -33,15 +33,8 @@ jobs:
             CODE_SIGNING_ALLOWED=NO \
             build
 
-      - name: Ad-hoc sign app bundle
+      - name: Stage and ad-hoc sign app bundle
         run: |
-          APP_PATH="build/DerivedData/Build/Products/Release/ai-dock.app"
-          codesign --force --deep --sign - "$APP_PATH"
-          codesign --verify --deep --strict --verbose=2 "$APP_PATH"
-
-      - name: Package app
-        run: |
-          DMG_NAME="ai-dock-${GITHUB_REF_NAME}.dmg"
           APP_PATH="build/DerivedData/Build/Products/Release/ai-dock.app"
           STAGING_DIR="build/release-staging"
 
@@ -50,6 +43,15 @@ jobs:
           cp -R "$APP_PATH" "$STAGING_DIR/ai-dock.app"
 
           xattr -cr "$STAGING_DIR/ai-dock.app"
+
+          codesign --force --deep --sign - "$STAGING_DIR/ai-dock.app"
+          codesign --verify --deep --strict --verbose=2 "$STAGING_DIR/ai-dock.app"
+
+      - name: Package app
+        run: |
+          DMG_NAME="ai-dock-${GITHUB_REF_NAME}.dmg"
+          STAGING_DIR="build/release-staging"
+
           hdiutil create \
             -volname "ai-dock" \
             -srcfolder "$STAGING_DIR" \
@@ -57,6 +59,9 @@ jobs:
             -format UDZO \
             "$DMG_NAME"
 
+      - name: Generate checksum
+        run: |
+          DMG_NAME="ai-dock-${GITHUB_REF_NAME}.dmg"
           shasum -a 256 "$DMG_NAME" > "${DMG_NAME}.sha256"
 
       - name: Create GitHub release
